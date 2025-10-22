@@ -1,0 +1,27 @@
+{
+  "patient_id": "12345",
+  "name": "adam cook",
+  "timestamp": "2025-10-22T09:47:57.877084Z",
+  "context": {
+    "age_years": 81,
+    "sex": "unknown",
+    "notes": "Mock record"
+  },
+  "vitals": {
+    "CCA": {
+      "psv_cm_s": 107.1,
+      "edv_cm_s": 20.3,
+      "imt_mm": 1.0
+    },
+    "ICA": {
+      "psv_cm_s": 157.6,
+      "edv_cm_s": 13.0,
+      "imt_mm": 0.93
+    },
+    "ECA": {
+      "psv_cm_s": 111.9,
+      "edv_cm_s": 16.7
+    },
+    "ica_cca_ratio": 1.47
+  }
+}
