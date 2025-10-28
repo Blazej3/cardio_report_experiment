@@ -4,9 +4,9 @@ import json, random, datetime
 def one_record():
     def bounded(v,lo,hi):return max(lo, min(hi,v))
 
-    cca_psv = random.uniform(50,120)
-    ica_psv = bounded(cca_psv * random.uniform(0.9,1.6), 20, 300)
-    eca_psv = random.uniform(40,140)
+    cca_psv = random.uniform(50,150)
+    ica_psv = bounded(cca_psv * random.uniform(0.9,2.5), 20, 300)
+    eca_psv = random.uniform(40,200)
 
     patient_data ={
         "patient_id": "12345",

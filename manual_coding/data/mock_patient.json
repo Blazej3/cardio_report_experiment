@@ -1,27 +1,27 @@
 {
   "patient_id": "12345",
   "name": "adam cook",
-  "timestamp": "2025-10-22T09:47:57.877084Z",
+  "timestamp": "2025-10-27T17:12:44.839351Z",
   "context": {
-    "age_years": 81,
-    "sex": "unknown",
+    "age_years": 82,
+    "sex": "female",
     "notes": "Mock record"
   },
   "vitals": {
     "CCA": {
-      "psv_cm_s": 107.1,
-      "edv_cm_s": 20.3,
-      "imt_mm": 1.0
+      "psv_cm_s": 146.9,
+      "edv_cm_s": 31.4,
+      "imt_mm": 0.87
     },
     "ICA": {
-      "psv_cm_s": 157.6,
-      "edv_cm_s": 13.0,
-      "imt_mm": 0.93
+      "psv_cm_s": 300,
+      "edv_cm_s": 29.0,
+      "imt_mm": 0.63
     },
     "ECA": {
-      "psv_cm_s": 111.9,
-      "edv_cm_s": 16.7
+      "psv_cm_s": 74.4,
+      "edv_cm_s": 27.4
     },
-    "ica_cca_ratio": 1.47
+    "ica_cca_ratio": 2.04
   }
 }
