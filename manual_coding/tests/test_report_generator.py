@@ -72,7 +72,7 @@ def test_build_report_model(sample_patient, mock_findings):
     assert model["findings"] == mock_findings
     assert model["risk_level"] == "Moderate"
 
-def test_generate_html_report(sample_patient, mock_findings, tmp_path):
+def test_generate_html_report(sample_patient, mock_findings):
     template_content = """
     <html>
     <head><title>Report for {{ patient_name }}</title></head>
@@ -88,7 +88,7 @@ def test_generate_html_report(sample_patient, mock_findings, tmp_path):
     </body>
     </html>
     """
-    template_path = tmp_path / "report_template.html"
+    template_path = Path(__file__).parent.parent / "tests" / "report_template.html"
     template_path.write_text(template_content)
 
     model = build_report_model(sample_patient, mock_findings, "Moderate")
@@ -97,4 +97,7 @@ def test_generate_html_report(sample_patient, mock_findings, tmp_path):
     assert "<title>Report for John Tester</title>" in html
     assert "<h1>Patient ID: Test123</h1>" in html
     assert "<h2>Exam Date: 2025-10-29</h2>" in html
+
+    template_path.unlink()
+    assert not template_path.exists()
 
