@@ -1,2 +1,3 @@
 Python == 3.12.7
 pytest == 7.4.4
+WeasyPrint == 66.0
