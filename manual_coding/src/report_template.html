@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Report</title>
+    <style>
+        @page { size: A4; margin: 1cm; }
+        body { 
+            font-family: Arial, sans-serif;
+            max-width: 21cm;
+            margin: 0 auto;
+            font-size: 11px;
+        }
+        h1 { 
+            color: #333;
+            font-size: 16px;
+            margin: 10px 0;
+        }
+        h2 {
+            font-size: 14px;
+            margin: 8px 0;
+        }
+        h3 {
+            font-size: 12px;
+            margin: 6px 0;
+        }
+        table { 
+            width: 100%;
+            border-collapse: collapse;
+            margin: 10px 0;
+        }
+        th, td { 
+            border: 1px solid #ddd;
+            padding: 4px;
+            font-size: 10px;
+        }
+        th { background-color: #f2f2f2; }
+        p { margin: 5px 0; }
+    </style>
+</head>
+<body>
+    <h1>Patient Report for {{ patient_name }}</h1>
+    <p>Patient ID: {{ patient_id }} | Exam Date: {{ exam_date }}</p>
+
+    <h2>Vital Signs</h2>
+    {% for section in vital_sections %}
+        <h3>{{ section.section }}</h3>
+        <table>
+            <tr>
+                <th>Metric</th>
+                <th>Value</th>
+                <th>Unit</th>
+            </tr>
+            {% for row in section.rows %}
+                <tr>
+                    <td>{{ row.metric }}</td>
+                    <td>{{ row.value }}</td>
+                    <td>{{ row.unit }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% endfor %}
+
+    <h2>Derived Metrics</h2>
+    <table>
+        <tr>
+            <th>Metric</th>
+            <th>Value</th>
+            <th>Unit</th>
+        </tr>
+        {% for metric in derived_metrics %}
+            <tr>
+                <td>{{ metric.metric }}</td>
+                <td>{{ metric.value }}</td>
+                <td>{{ metric.unit }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+
+    <h2>Findings & Risk Level</h2>
+    <p>{{ findings | join(', ') }}</p>
+    <p >Risk Level: {{ risk_level }}</p>
+</body>
+</html>
