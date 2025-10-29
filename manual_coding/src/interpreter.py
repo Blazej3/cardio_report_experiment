@@ -1,12 +1,12 @@
 def interpret_vitals(patient:dict):
     
     findings = []
-    vitals = patient.get("vitals", {})
+    vitals = patient.get("vitals")
 
-    cca = vitals.get("CCA", {})
-    ica = vitals.get("ICA", {})
-    eca = vitals.get("ECA", {})
-    ratio = vitals.get("ica_cca_ratio", {})
+    cca = vitals.get("CCA")
+    ica = vitals.get("ICA")
+    eca = vitals.get("ECA")
+    ratio = vitals.get("ica_cca_ratio")
     
     ica_psv = ica.get("psv_cm_s")
     if ica_psv:
