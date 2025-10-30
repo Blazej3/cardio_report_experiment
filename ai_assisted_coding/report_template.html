@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Cardio Report (Descriptive Only)</title>
+  <style>
+    body { font-family: Arial, Helvetica, sans-serif; margin: 24px; color: #222; }
+    h1 { font-size: 22px; margin-bottom: 4px; }
+    h2 { font-size: 16px; margin-top: 24px; margin-bottom: 8px; }
+    .meta { font-size: 12px; color: #555; margin-bottom: 16px; }
+    table { border-collapse: collapse; width: 100%; font-size: 12px; }
+    th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+    th { background: #f5f5f5; }
+    .badge { display: inline-block; padding: 2px 6px; border-radius: 4px; background: #eef; font-size: 11px; }
+    .footnote { font-size: 10px; color: #666; margin-top: 24px; }
+    .pill { border: 1px solid #ddd; border-radius: 12px; padding: 4px 8px; font-size: 11px; margin-right: 6px; }
+  </style>
+</head>
+<body>
+  <h1>Cardio Report (Descriptive Only)</h1>
+  <div class="meta">
+    <strong>Patient:</strong> {{ patient_name }} &nbsp;|&nbsp;
+    <strong>ID:</strong> {{ patient_id }} &nbsp;|&nbsp;
+    <strong>Date:</strong> {{ timestamp }}<br>
+    <strong>Context:</strong> age {{ context.age_years }}, sex {{ context.sex }}, note: {{ context.notes }}
+  </div>
+
+  <h2>Vitals (as provided)</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Vessel</th>
+        <th>PSV (cm/s)</th>
+        <th>EDV (cm/s)</th>
+        <th>IMT (mm)</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for row in vitals_rows %}
+      <tr>
+        <td>{{ row.vessel }}</td>
+        <td>{{ row.psv }}</td>
+        <td>{{ row.edv }}</td>
+        <td>{{ row.imt }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  <h2>Summary (Descriptive)</h2>
+  <div>
+    <span class="pill">Highest PSV: {{ highest_psv_vessel or "n/a" }}</span>
+    <span class="pill">ICA/CCA PSV ratio: {{ ica_cca_ratio if ica_cca_ratio is not none else "n/a" }}</span>
+  </div>
+
+  <h2>Aggregate Statistics</h2>
+  <table>
+    <thead>
+      <tr><th>Metric</th><th>Min</th><th>Max</th><th>Mean</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>PSV (cm/s)</td>
+        <td>{{ stats.psv.min if stats.psv else "n/a" }}</td>
+        <td>{{ stats.psv.max if stats.psv else "n/a" }}</td>
+        <td>{{ "%.2f"|format(stats.psv.mean) if stats.psv else "n/a" }}</td>
+      </tr>
+      <tr>
+        <td>EDV (cm/s)</td>
+        <td>{{ stats.edv.min if stats.edv else "n/a" }}</td>
+        <td>{{ stats.edv.max if stats.edv else "n/a" }}</td>
+        <td>{{ "%.2f"|format(stats.edv.mean) if stats.edv else "n/a" }}</td>
+      </tr>
+      <tr>
+        <td>IMT (mm)</td>
+        <td>{{ stats.imt.min if stats.imt else "n/a" }}</td>
+        <td>{{ stats.imt.max if stats.imt else "n/a" }}</td>
+        <td>{{ "%.2f"|format(stats.imt.mean) if stats.imt else "n/a" }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>Findings (Descriptive Only)</h2>
+  <ul>
+    {% for n in notes %}
+      <li>{{ n }}</li>
+    {% endfor %}
+    {% if notes|length == 0 %}
+      <li>No additional descriptive notes.</li>
+    {% endif %}
+  </ul>
+
+  <p class="footnote">
+    This report is automatically generated from provided data and mock computations.
+    It is <strong>not</strong> a clinical or diagnostic assessment.
+  </p>
+</body>
+</html>
