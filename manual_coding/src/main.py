@@ -1,3 +1,4 @@
+
 import json
 from pathlib import Path
 from report_generator import build_report_model, generate_html_report, save_pdf
@@ -5,6 +6,7 @@ from interpreter import interpret_vitals, classify_risk
 
 
 def load_patient_data(file_path: Path):
+    """Loads patient data from Json"""
     with open(file_path, 'r') as f:
         return json.load(f)
 

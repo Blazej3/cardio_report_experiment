@@ -1,4 +1,12 @@
+"""Interpreter module for patient vitals analysis"""
 def interpret_vitals(patient:dict):
+    """
+    Interprets patient vitals 
+    
+    Args: Json with patient data
+
+    Returns list of findings
+    """
     
     findings = []
     vitals = patient.get("vitals")
@@ -60,6 +68,14 @@ def interpret_vitals(patient:dict):
     return findings
 
 def classify_risk(findings:list[str]):
+    """
+    classifies risk of findings (High, Moderate, Normal)
+
+    Args: list of findings
+
+    Returns: risk level
+
+    """
     text = " ".join(findings).lower()
     if "severe" in text:
         return "High"

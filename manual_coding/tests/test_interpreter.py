@@ -1,3 +1,4 @@
+"""tests fr interpreter module"""
 import pytest
 import sys
 from pathlib import Path

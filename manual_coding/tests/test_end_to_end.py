@@ -1,3 +1,4 @@
+"""tests for end to end functionality"""
 import pytest
 from pathlib import Path
 import sys

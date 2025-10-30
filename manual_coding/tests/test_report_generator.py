@@ -1,3 +1,4 @@
+"""tests for report_generator module"""
 import pytest
 from pathlib import Path
 import sys
