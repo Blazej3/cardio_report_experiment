@@ -1,0 +1,27 @@
+{
+  "patient_id": "35891",
+  "name": "casey lee",
+  "timestamp": "2025-11-03",
+  "context": {
+    "age_years": 74,
+    "sex": "unknown",
+    "notes": "Mock record"
+  },
+  "vitals": {
+    "CCA": {
+      "psv_cm_s": 88.7,
+      "edv_cm_s": 32.8,
+      "imt_mm": 0.98
+    },
+    "ICA": {
+      "psv_cm_s": 115.8,
+      "edv_cm_s": 41.8,
+      "imt_mm": 0.52
+    },
+    "ECA": {
+      "psv_cm_s": 171.5,
+      "edv_cm_s": 19.4
+    },
+    "ica_cca_ratio": 1.31
+  }
+}

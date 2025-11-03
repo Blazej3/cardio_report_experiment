@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Cardio Report (Descriptive Only)</title>
+  <style>
+    body { font-family: Arial, Helvetica, sans-serif; margin: 24px; color: #222; }
+    h1 { font-size: 22px; margin-bottom: 4px; }
+    h2 { font-size: 16px; margin-top: 24px; margin-bottom: 8px; }
+    .meta { font-size: 12px; color: #555; margin-bottom: 16px; }
+    table { border-collapse: collapse; width: 100%; font-size: 12px; }
+    th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+    th { background: #f5f5f5; }
+    .badge { display: inline-block; padding: 2px 6px; border-radius: 4px; background: #eef; font-size: 11px; }
+    .footnote { font-size: 10px; color: #666; margin-top: 24px; }
+    .pill { border: 1px solid #ddd; border-radius: 12px; padding: 4px 8px; font-size: 11px; margin-right: 6px; }
+  </style>
+</head>
+<body>
+  <h1>Cardio Report (Descriptive Only)</h1>
+  <div class="meta">
+    <strong>Patient:</strong> Casey Lee &nbsp;|&nbsp;
+    <strong>ID:</strong> 35891 &nbsp;|&nbsp;
+    <strong>Date:</strong> 2025-11-03<br>
+    <strong>Context:</strong> age 74, sex unknown, note: Mock record
+  </div>
+
+  <h2>Vitals (as provided)</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Vessel</th>
+        <th>PSV (cm/s)</th>
+        <th>EDV (cm/s)</th>
+        <th>IMT (mm)</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+      <tr>
+        <td>CCA</td>
+        <td>88.7</td>
+        <td>32.8</td>
+        <td>0.98</td>
+      </tr>
+      
+      <tr>
+        <td>ICA</td>
+        <td>115.8</td>
+        <td>41.8</td>
+        <td>0.52</td>
+      </tr>
+      
+      <tr>
+        <td>ECA</td>
+        <td>171.5</td>
+        <td>19.4</td>
+        <td>None</td>
+      </tr>
+      
+    </tbody>
+  </table>
+
+  <h2>Summary (Descriptive)</h2>
+  <div>
+    <span class="pill">Highest PSV: ECA</span>
+    <span class="pill">ICA/CCA PSV ratio: 1.31</span>
+  </div>
+
+  <h2>Aggregate Statistics</h2>
+  <table>
+    <thead>
+      <tr><th>Metric</th><th>Min</th><th>Max</th><th>Mean</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>PSV (cm/s)</td>
+        <td>88.7</td>
+        <td>171.5</td>
+        <td>125.33</td>
+      </tr>
+      <tr>
+        <td>EDV (cm/s)</td>
+        <td>19.4</td>
+        <td>41.8</td>
+        <td>31.33</td>
+      </tr>
+      <tr>
+        <td>IMT (mm)</td>
+        <td>0.52</td>
+        <td>0.98</td>
+        <td>0.75</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>Findings (Descriptive Only)</h2>
+  <ul>
+    
+      <li>Highest PSV observed in: ECA.</li>
+    
+      <li>ICA/CCA PSV ratio (echoed): 1.31.</li>
+    
+      <li>IMT values summarized descriptively (no thresholds applied).</li>
+    
+    
+  </ul>
+
+  <p class="footnote">
+    This report is automatically generated from provided data and mock computations.
+    It is <strong>not</strong> a clinical or diagnostic assessment.
+  </p>
+</body>
+</html>
